@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    password: root
+    username: postgres
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:mpesa}
+server:
+  port: 8011
+
+app:
+  GENERATE_TOKEN_URL: ${TOKEN_URL:https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials}
+  CONSUMER_KEY: ${CONSUMER_KEY:geEDCGYAk22keG4NoWZBkStMZAIcMt2c}
+  CONSUMER_SECRET: ${CONSUMER_SECRET:4FutUZw849FdlvfP}
+  SHORTCODE: ${SHORTCODE:174379}
+  PARTY_B: ${PARTY_B:174379}
+  PASSKEY: ${PASSKEY:bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919}
+  MPESA_CALLBACK_URL: ${MPESA_CALLBACK_URL:https://2b45-41-72-204-70.ngrok-free.app}
+  SEND_STK_URL: ${SEND_STK_URL:https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest}
+  BOOKINGSYS_CALLBACK_URL: ${BOOKINGSYS_CALLBACK_URL:http://localhost:8082/api/p1/callTicketPayment/}
